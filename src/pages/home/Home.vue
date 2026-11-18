@@ -38,7 +38,7 @@ const previewImage = ref('')
     </section>
 
     <div
-      class="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-4"
+      class="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-3"
     >
       <Button
         variant="outline"
@@ -51,20 +51,19 @@ const previewImage = ref('')
 
       <Button
         variant="outline"
+        @mouseenter="previewImage = '/images/3d-modelling-preview.png'"
+@mouseleave="previewImage = ''"
         class="h-24 border-[#605545] text-lg text-[#605545]"
       >
-        SketchUp
+       3D Modelling
       </Button>
+
+      
 
       <Button
         variant="outline"
-        class="h-24 border-[#605545] text-lg text-[#605545]"
-      >
-        Blender
-      </Button>
-
-      <Button
-        variant="outline"
+        @mouseenter="previewImage = '/images/graphic-design-preview.png'"
+@mouseleave="previewImage = ''"
         class="h-24 border-[#605545] text-lg text-[#605545]"
       >
         Graphic Design
