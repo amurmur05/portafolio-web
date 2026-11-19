@@ -1,83 +1,104 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button'
 import { ref } from 'vue'
+import { Button } from '@/components/ui/button'
+
 const previewImage = ref('')
 </script>
 
 <template>
-  <main class="min-h-screen bg-white px-6 py-12 md:px-16">
-    <section class="relative mx-auto mt-12 max-w-5xl border-1 border-black">
-      <div class="pointer-events-none absolute -bottom-px -left-18 -right-0 border-t border-black"></div>
-      <div class="pointer-events-none absolute -top-24 -bottom-0 -left-px border-l border-black"></div>
-      <div class="pointer-events-none absolute -top-0 -bottom-76 -right-px border-r border-black"></div>
-      <div class="pointer-events-none absolute -top-px -left-0 -right-18 border-t border-black"></div>
+  <main class="relative flex min-h-screen flex-col border border-black bg-white">
+    <section class="relative grid w-full flex-1 place-items-center">
+      
+<Transition
+  enter-active-class="transition-opacity duration-700"
+  enter-from-class="opacity-0!"
+  leave-active-class="transition-opacity duration-300"
+leave-to-class="opacity-0!"
+>
       <img
-  v-if="previewImage"
-  :src="previewImage"
-  alt=""
- class="absolute inset-0 h-full w-full object-cover opacity-80 blur-sm"
-/>
-      <h2 class="absolute bottom-1 left-10 z-10 text-2xl font-bold leading-none" :class="previewImage ? 'text-white' : 'text-[#605545]'">
-      
-        MY PROJECTS
-      </h2>
+        v-if="previewImage"
+        :src="previewImage"
+        alt=""
+        class="pointer-events-none absolute inset-0 h-full w-full object-cover brightness-75"
+      />
+      </Transition>
 
-      <header class="relative z-10 mx-auto w-fit max-w-full px-4 py-20 md:py-28">
+      <header class="relative z-10 ml-6 mt-24 w-fit self-start justify-self-start pr-6 md:ml-16 md:mt-20 md:pr-24">
         <h1
-          class="text-4xl font-bold sm:text-6xl md:text-8xl" :class="previewImage ? 'text-white' : 'text-[#605545]'">
-      
+          class="text-4xl font-bold sm:text-6xl md:text-8xl"
+          :class="previewImage ? 'text-white' : 'text-[#605545]'"
+        >
           PORTFOLIO
         </h1>
 
-       <hr class="my-3" :class="previewImage ? 'border-white' : 'border-black'" />
+        <hr
+          class="my-3 -ml-6 -mr-6 md:-ml-16 md:-mr-24"
+          :class="previewImage ? 'border-white' : 'border-black'"
+        />
 
-        <p class="text-right text-xl font-bold" :class="previewImage ? 'text-white' : 'text-[#605545]'">
-  by Aurora Murrocu
-</p>
+        <p
+          class="-mr-22 text-right text-xl font-medium"
+          :class="previewImage ? 'text-white' : 'text-[#605545]'"
+        >
+          by Aurora Murrocu
+        </p>
       </header>
+
+      <h2
+        class="absolute bottom-1 left-10 z-10 text-2xl font-bold leading-none"
+        :class="previewImage ? 'text-white' : 'text-[#605545]'"
+      >
+        MY PROJECTS
+      </h2>
     </section>
 
-    <div
-      class="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-3"
-    >
+    <div class="grid w-full grid-cols-3 border-t border-black bg-white px-2 max-md:[&>button]:px-1 max-md:[&>button]:text-xs md:gap-x-6 md:px-4">
       <Button
-        variant="outline"
+        variant="ghost"
+       class="h-10 text-lg text-[#605545] underline-offset-4 hover:underline focus-visible:underline"
         @mouseenter="previewImage = '/images/autocad-preview.png.jpeg'"
-@mouseleave="previewImage = ''"
-        class="h-24 border-[#605545] text-lg text-[#605545]"
+        @mouseleave="previewImage = ''"
+        @focus="previewImage = '/images/autocad-preview.png.jpeg'"
+@blur="previewImage = ''"
       >
         AutoCAD
       </Button>
 
       <Button
-        variant="outline"
+        variant="ghost"
+        class="h-10 text-lg text-[#605545] underline-offset-4 hover:underline focus-visible:underline"
         @mouseenter="previewImage = '/images/3d-modelling-preview.png'"
-@mouseleave="previewImage = ''"
-        class="h-24 border-[#605545] text-lg text-[#605545]"
+        @mouseleave="previewImage = ''"
+        @focus="previewImage = '/images/3d-modelling-preview.png'"
+@blur="previewImage = ''"
       >
-       3D Modelling
+        3D Modelling
       </Button>
 
-      
-
       <Button
-        variant="outline"
+        variant="ghost"
+        class="h-10 text-lg text-[#605545] underline-offset-4 hover:underline focus-visible:underline"
         @mouseenter="previewImage = '/images/graphic-design-preview.png'"
-@mouseleave="previewImage = ''"
-        class="h-24 border-[#605545] text-lg text-[#605545]"
+        @mouseleave="previewImage = ''"
+        @focus="previewImage = '/images/graphic-design-preview.png'"
+@blur="previewImage = ''"
       >
         Graphic Design
       </Button>
     </div>
 
-    <div class="mt-16 flex justify-center">
-      <Button
-        variant="outline"
-        class="h-14 border-[#605545] px-12 text-lg text-[#605545]"
-      >
-        ABOUT ME
-      </Button>
-      
-    </div>
+    <div
+  class="absolute right-0 top-6 z-20 border-b pr-12 md:pr-24"
+  :class="previewImage ? 'border-white' : 'border-black'"
+>
+  <Button
+    variant="ghost"
+    class="h-10 text-lg"
+    :class="previewImage ? 'text-white' : 'text-[#605545]'"
+  >
+    ABOUT ME
+  </Button>
+</div>
+    
   </main>
 </template>
