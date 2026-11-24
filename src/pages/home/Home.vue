@@ -52,10 +52,10 @@ leave-to-class="opacity-0!"
       </h2>
     </section>
 
-    <div class="grid w-full grid-cols-3 border-t border-black bg-white px-2 max-md:[&>button]:px-1 max-md:[&>button]:text-xs md:gap-x-6 md:px-4">
+    <div class="grid w-full grid-cols-3 border-t border-black bg-white px-2 max-md:[&>a]:px-1 max-md:[&>a]:text-xs md:gap-x-6 md:px-4">
       <Button
         variant="ghost" as-child
-       class="h-10 text-lg text-[#605545] underline-offset-4 hover:underline focus-visible:underline"
+       class="h-10 px-1 text-xs text-[#605545] underline-offset-4 hover:underline focus-visible:underline md:px-4 md:text-lg"
         @mouseenter="previewImage = '/images/autocad-preview.png.jpeg'"
         @mouseleave="previewImage = ''"
         @focus="previewImage = '/images/autocad-preview.png.jpeg'"
@@ -66,7 +66,7 @@ leave-to-class="opacity-0!"
 
       <Button
         variant="ghost" as-child
-        class="h-10 text-lg text-[#605545] underline-offset-4 hover:underline focus-visible:underline"
+       class="h-10 px-1 text-xs text-[#605545] underline-offset-4 hover:underline focus-visible:underline md:px-4 md:text-lg"
         @mouseenter="previewImage = '/images/3d-modelling-preview.png'"
         @mouseleave="previewImage = ''"
         @focus="previewImage = '/images/3d-modelling-preview.png'"
@@ -77,7 +77,7 @@ leave-to-class="opacity-0!"
 
       <Button
         variant="ghost" as-child
-        class="h-10 text-lg text-[#605545] underline-offset-4 hover:underline focus-visible:underline"
+       class="h-10 px-1 text-xs text-[#605545] underline-offset-4 hover:underline focus-visible:underline md:px-4 md:text-lg"
         @mouseenter="previewImage = '/images/graphic-design-preview.png'"
         @mouseleave="previewImage = ''"
         @focus="previewImage = '/images/graphic-design-preview.png'"
