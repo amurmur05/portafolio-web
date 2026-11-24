@@ -54,36 +54,36 @@ leave-to-class="opacity-0!"
 
     <div class="grid w-full grid-cols-3 border-t border-black bg-white px-2 max-md:[&>button]:px-1 max-md:[&>button]:text-xs md:gap-x-6 md:px-4">
       <Button
-        variant="ghost"
+        variant="ghost" as-child
        class="h-10 text-lg text-[#605545] underline-offset-4 hover:underline focus-visible:underline"
         @mouseenter="previewImage = '/images/autocad-preview.png.jpeg'"
         @mouseleave="previewImage = ''"
         @focus="previewImage = '/images/autocad-preview.png.jpeg'"
 @blur="previewImage = ''"
       >
-        AutoCAD
+       <RouterLink to="/autocad">AutoCAD</RouterLink>
       </Button>
 
       <Button
-        variant="ghost"
+        variant="ghost" as-child
         class="h-10 text-lg text-[#605545] underline-offset-4 hover:underline focus-visible:underline"
         @mouseenter="previewImage = '/images/3d-modelling-preview.png'"
         @mouseleave="previewImage = ''"
         @focus="previewImage = '/images/3d-modelling-preview.png'"
 @blur="previewImage = ''"
       >
-        3D Modelling
+       <RouterLink to="/3d-modelling">3D Modelling</RouterLink>
       </Button>
 
       <Button
-        variant="ghost"
+        variant="ghost" as-child
         class="h-10 text-lg text-[#605545] underline-offset-4 hover:underline focus-visible:underline"
         @mouseenter="previewImage = '/images/graphic-design-preview.png'"
         @mouseleave="previewImage = ''"
         @focus="previewImage = '/images/graphic-design-preview.png'"
 @blur="previewImage = ''"
       >
-        Graphic Design
+        <RouterLink to="/graphic-design">Graphic Design</RouterLink>
       </Button>
     </div>
 
@@ -92,12 +92,13 @@ leave-to-class="opacity-0!"
   :class="previewImage ? 'border-white' : 'border-black'"
 >
   <Button
-    variant="ghost"
-    class="h-10 text-lg"
-    :class="previewImage ? 'text-white' : 'text-[#605545]'"
-  >
-    ABOUT ME
-  </Button>
+  variant="ghost"
+  as-child
+  class="h-10 text-lg"
+  :class="previewImage ? 'text-white' : 'text-[#605545]'"
+>
+  <RouterLink to="/about-me">ABOUT ME</RouterLink>
+</Button>
 </div>
     
   </main>
