@@ -4,6 +4,8 @@ import AutoCAD from '@/pages/autocad/AutoCAD.vue'
 import ThreeDModelling from '@/pages/3d-modelling/ThreeDModelling.vue'
 import GraphicDesign from '@/pages/graphic-design/GraphicDesign.vue'
 import AboutMe from '@/pages/about-me/AboutMe.vue'
+import Blender from '@/pages/3d-modelling/Blender.vue'
+import SketchUp from '@/pages/3d-modelling/SketchUp.vue'
 
 
 export const router = createRouter({
@@ -28,6 +30,10 @@ export const router = createRouter({
   path: '/3d-modelling',
   name: '3d-modelling',
   component: ThreeDModelling,
+  children: [
+    { path: 'blender', component: Blender },
+    { path: 'sketchup', component: SketchUp },
+  ],
 },
 {
   path: '/graphic-design',
