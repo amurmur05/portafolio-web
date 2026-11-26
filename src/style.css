@@ -125,3 +125,10 @@
     @apply bg-background text-foreground;
   }
 }
+@theme {
+  --color-warm-white: #f2efeb;
+  --color-deep-brown: #361f1c;
+  --color-soft-olive: #605331;
+  --color-soft-beige: #b2a591;
+  --color-deep-wine: #60211a;
+}
