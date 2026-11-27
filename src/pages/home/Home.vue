@@ -121,28 +121,62 @@ const previewImage = ref('')
 
       </svg>
 
+<!-- Geometrie mobile -->
+<svg
+  viewBox="0 0 320 500"
+  preserveAspectRatio="none"
+  class="pointer-events-none absolute inset-0 h-full w-full md:hidden"
+  aria-hidden="true"
+>
+  <!-- P monumentale -->
+  <path
+  d="M -30 -20
+     H 85
+     A 75 90 0 0 1 85 180
+     H -30"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="65"
+  :class="previewImage ? 'text-white' : 'text-soft-olive'"
+/>
+  <!-- Linea verticale sottile -->
+  <path
+    d="M 40 0 V 500"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="10"
+    vector-effect="non-scaling-stroke"
+    :class="previewImage ? 'text-white' : 'text-deep-brown'"
+  />
+</svg>
       <!-- Titolo principale -->
+    
 
-      <header class="absolute bottom-[50%] left-[2%] z-10">
+     <header
+  class="absolute left-[14%] top-[43%] z-10
+         md:bottom-[50%] md:left-[2%] md:top-auto"
+>
 
-        <h1
-          class="text-[12vw] font-bold leading-none sm:text-6xl md:text-8xl lg:text-[clamp(6rem,9vw,10rem)]"
-          :class="previewImage ? 'text-white' : 'text-deep-wine'"
-        >
-          PORTFOLIO
-        </h1>
+ <h1
+  class="text-[16vw] font-bold leading-none md:text-8xl lg:text-[clamp(6rem,9vw,10rem)]"
+  :class="previewImage ? 'text-white' : 'text-deep-wine'"
+  aria-label="Portfolio"
+>
+  <span class="hidden md:inline">PORTFOLIO</span>
+  <span class="md:hidden">ORTFOLIO</span>
+</h1>
 
-        <p
-          class="mt-4 text-right text-lg font-medium md:hidden"
-          :class="previewImage ? 'text-white' : 'text-deep-brown'"
-        >
-          by Aurora Murrocu
-        </p>
+  <p
+    class="mt-3 text-right text-sm font-medium md:hidden"
+    :class="previewImage ? 'text-white' : 'text-deep-brown'"
+  >
+    by Aurora Murrocu
+  </p>
 
-      </header>
+</header>
 
       <h2
-        class="absolute bottom-2 left-[2%] z-10 text-2xl font-bold leading-none"
+       class="absolute bottom-3 left-[14%] z-10 text-lg font-bold leading-none md:bottom-2 md:left-[2%] md:text-2xl"
         :class="previewImage ? 'text-white' : 'text-deep-brown'"
       >
         MY PROJECTS
@@ -152,12 +186,14 @@ const previewImage = ref('')
 
     <!-- Barra inferiore -->
 
-    <div class="relative z-20 grid w-full grid-cols-3 border-t border-deep-brown bg-soft-olive px-2 [&>a]:text-warm-white [&>a:hover]:bg-deep-brown [&>a:hover]:text-warm-white md:gap-x-6 md:px-4">
+    <div class="relative z-20 grid w-full grid-cols-1 md:grid-cols-3 border-t border-deep-brown bg-soft-olive px-2 [&>a]:text-warm-white [&>a:hover]:bg-deep-brown [&>a:hover]:text-warm-white md:gap-x-6 md:px-4 divide-y divide-deep-brown/40 md:divide-y-0">
+      
 
       <Button
         variant="ghost"
         as-child
-        class="h-10 px-1 text-xs hover:underline md:px-4 md:text-lg"
+        class="h-12 px-1 text-base hover:underline md:h-10 md:px-4 md:text-lg"
+        
       >
         <RouterLink
           to="/autocad"
@@ -173,7 +209,7 @@ const previewImage = ref('')
       <Button
         variant="ghost"
         as-child
-        class="h-10 px-1 text-xs hover:underline md:px-4 md:text-lg"
+       class="h-12 px-1 text-base hover:underline md:h-10 md:px-4 md:text-lg"
       >
         <RouterLink
           to="/3d-modelling"
@@ -189,7 +225,7 @@ const previewImage = ref('')
       <Button
         variant="ghost"
         as-child
-        class="h-10 px-1 text-xs hover:underline md:px-4 md:text-lg"
+        class="h-12 px-1 text-base hover:underline md:h-10 md:px-4 md:text-lg"
       >
         <RouterLink
           to="/graphic-design"
@@ -206,30 +242,49 @@ const previewImage = ref('')
 
     <!-- About Me -->
 
-    <div class="absolute right-0 top-0 z-20 h-24 w-48 md:w-[36%]">
+    <div class="absolute right-0 top-0 z-50 h-16 w-40 md:h-24 md:w-[36%]">
 
-      <svg
-        viewBox="0 0 400 96"
-        preserveAspectRatio="none"
-        class="pointer-events-none absolute inset-0 h-full w-full text-soft-olive"
-        aria-hidden="true"
-      >
-        <path
-          d="M 28 -80
-             V 12
-             A 56 56 0 0 0 84 68
-             H 400"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="40"
-          vector-effect="non-scaling-stroke"
-        />
-      </svg>
+      <!-- Geometria About Me desktop -->
+<svg
+  viewBox="0 0 400 96"
+  preserveAspectRatio="none"
+  class="pointer-events-none absolute inset-0 hidden h-full w-full text-soft-olive md:block"
+  aria-hidden="true"
+>
+  <path
+    d="M 28 -80
+       V 12
+       A 56 56 0 0 0 84 68
+       H 400"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="40"
+    vector-effect="non-scaling-stroke"
+  />
+</svg>
+
+<!-- Geometria About Me mobile -->
+<svg
+  viewBox="0 0 320 100"
+  preserveAspectRatio="none"
+  class="pointer-events-none absolute right-0 top-0 h-24 w-screen text-soft-olive md:hidden"
+  aria-hidden="true"
+>
+  <path
+    d="M -20 45
+       H 275
+       A 65 65 0 0 0 340 -20"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="32"
+    vector-effect="non-scaling-stroke"
+  />
+</svg>
 
       <Button
         variant="ghost"
         as-child
-        class="absolute right-6 top-[71%] h-10 -translate-y-1/2 rounded-none text-warm-white hover:bg-deep-brown hover:text-warm-white md:right-24 md:text-lg"
+        class="absolute right-6 top-[65%] md:top-[71%] z-10 h-10 -translate-y-1/2 rounded-none text-warm-white hover:bg-deep-brown hover:text-warm-white md:right-24 md:text-lg"
       >
         <RouterLink to="/about-me">
           ABOUT ME

@@ -1,14 +1,14 @@
 <template>
-  <main class="relative min-h-dvh border border-black bg-white px-[8%] pb-16 pt-24 text-[#605545] md:pt-28">
+  <main class="relative min-h-dvh border border-deep-brown bg-warm-white px-[8%] pb-16 pt-24 text-deep-brown md:pt-28">
     <RouterLink
       to="/"
-      class="absolute left-[8%] top-6 text-sm underline-offset-4 hover:underline"
+      class="absolute left-[8%] top-6 text-sm underline-offset-4 hover:text-deep-wine hover:underline"
     >
       ← Back to portfolio
     </RouterLink>
 
     <section class="w-full">
-      <header class="-ml-[9.5%] w-fit border-b border-black pb-3 pl-[9.5%] pr-10 md:pr-24">
+      <header class="-ml-[9.5%] w-fit border-b border-deep-brown pb-3 pl-[9.5%] pr-10 md:pr-24">
         <h1 class="text-5xl font-bold md:text-8xl">PROFILE</h1>
       </header>
 
